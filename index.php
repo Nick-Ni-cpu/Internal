@@ -2,15 +2,29 @@
 
 <html lang="en">
 
+<?php
+	
+	session_start(); // to allow variable transfer between pages ...
+	include("config.php");
+	
+	// Connect to database
+	$dbconnect = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+
+	if (mysqli_connect_errno()){
+		echo "Connection failed".mysqli_connect_error();
+		exit;
+	}
+
+?>
 	<head>
 		<meta charset="utf-8">
 		
 		<!-- For assessment you need to change these -->
-		<meta name="description" content="games, apps, ">
-		<meta name="keywords" content="Game / App Database">
-		<meta name="keywords" content="games, apps, ratings">
+		<meta name="description" content="wine, ">
+		<meta name="keywords" content="Wine Review Database">
+		<meta name="keywords" content="wine, points, price">
 		
-		<title>Game Database</title>
+		<title>Wine Review Database</title>
 		
 		<!-- for multiple fonts change | to %7c * no spaces* -->
 		<link href="http://fonts.googleapis.com/css?family=Lato%7cUbuntu"
@@ -35,7 +49,7 @@
 			</div>
 			
 			<div class="box banner">
-				<h1>Games Database</h1>
+				<h1>Wine Review Database</h1>
 			</div> <!-- / banner -->
 			
 			<div class="box main">
@@ -55,7 +69,7 @@
 			</div> <!-- / side -->
 			
 			<div class="box footer">
-				<p>Mrs Sarah Greeff 2020</p>
+				<p>Nick Ni & Jason Shen 2020</p>
 			</div> <!-- / footer -->
 			
 		</div> <!-- / wrapper -->

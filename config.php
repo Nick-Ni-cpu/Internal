@@ -1,6 +1,6 @@
 <?php
 
-int_set('display_errors', 'On'); // change to 'off' when live
+ini_set('display_errors', 'On'); // change to 'off' when live
 
 define ("DB_NAME", "wine");
 define ("DB_USERNAME","root");

@@ -3,7 +3,7 @@
 	$find_sql = "SELECT * FROM `wine_data`
 	JOIN Variety ON (wine_data.VarietyID = variety.VarietyID)
 	JOIN Winery ON (wine_data.WineryID = winery.WineryID)
-	JOIN Designation ON (wine_data.DesignationID = designation.DesignationID)
+	LEFT JOIN Designation ON (wine_data.DesignationID = designation.DesignationID)
 	JOIN Province ON (wine_data.ProvinceID = province.ProvinceID)
 	JOIN Taster_name ON (wine_data.Taster_nameID = taster_name.Taster_nameID)
 	JOIN Taster_twitter_handle ON (wine_data.Taster_twitter_handleID = taster_twitter_handle.Taster_twitter_handleID)
@@ -41,6 +41,7 @@
 				<div class="results">
 					<span class="sub_heading">
 							<?php echo $find_rs['Title']; ?>
+							<?php echo $find_rs['ID']; ?>
 					</span>
 					
 					<br />
@@ -48,16 +49,37 @@
 					<?php echo $find_rs["Variety"];?>
 					
 					<br />
+					<b>Points</b>:
+					<?php echo $find_rs["Point"];?>
+					<br />
+					<b>Prices</b>:
+					<?php echo $find_rs["Price"];?>
+					<br />
 					
 					<b>Winery</b>:
 					<?php echo $find_rs["Winery"];?>
 					
 					<br />
 					
-					<b>Designation</b>:
-					<?php echo $find_rs["Designation"];?>
 					
+					
+					<b>Designation</b>:
+					<?php
+					if($find_rs["DesignationID"] == 0){
+						?>
+							None
+					<?php
+					}
+					else{
+						?>
+						<?php echo $find_rs["Designation"];?>
+					<?php
+					}
+					?>
 					<br />
+					
+					
+					
 					
 					<b>Province</b>:
 					<?php echo $find_rs["Province"];?>
@@ -72,6 +94,10 @@
 					<b>Taster_twitter_handle</b>:
 					<?php echo $find_rs["Taster_twitter_handle"];?>
 					
+					<br />
+					
+					<b>Description</b>:
+					<?php echo $find_rs["Description"];?>
 				</div> <!--/results-->
 				
 				<br />

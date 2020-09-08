@@ -41,7 +41,7 @@
 				<div class="results">
 					<span class="sub_heading">
 							<?php echo $find_rs['Title']; ?>
-							<?php echo $find_rs['ID']; ?>
+
 					</span>
 					
 					<br />
@@ -50,15 +50,27 @@
 					
 					<br />
 					<b>Points</b>:
-					<?php echo $find_rs["Point"];?>
-					<br />
-					<b>Prices</b>:
-					<?php echo $find_rs["Price"];?>
-					<br />
+					<?php echo $find_rs["Point"];?>&nbsp;&nbsp;&nbsp;&nbsp;
 					
-					<b>Winery</b>:
-					<?php echo $find_rs["Winery"];?>
+					<?php
+					if($find_rs["Price"] == 0){
+						?>
+							<b>Price</b>: Not Recorded
+					<?php
+					}
+					else{
+						?>
+						<b>Prices</b>:&nbsp;$<?php echo $find_rs["Price"];?>
+					<?php
+					}
+					?>
 					
+					
+					
+					
+					<br />
+					<b>Winery</b>:<?php echo $find_rs["Winery"];?>
+
 					<br />
 					
 					
@@ -87,15 +99,9 @@
 					<br />
 					
 					<b>Taster_name</b>:
-					<?php echo $find_rs["Taster_name"];?>
-					
+					<?php echo $find_rs["Taster_name"];?>&nbsp;&nbsp;&nbsp;&nbsp;<b>Taster_twitter_handle</b>:<?php echo $find_rs["Taster_twitter_handle"];?>		
 					<br />
-					
-					<b>Taster_twitter_handle</b>:
-					<?php echo $find_rs["Taster_twitter_handle"];?>
-					
-					<br />
-					
+					<hr />
 					<b>Description</b>:
 					<?php echo $find_rs["Description"];?>
 				</div> <!--/results-->

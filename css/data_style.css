@@ -188,6 +188,7 @@ input{
 	box-sizing: border-box;
 }
 
+/* Controls heigth of options in dropdown menus */
 select{
 	height:40px;
 }
@@ -198,6 +199,8 @@ select{
 	border: solid 1px #4f570b;
 	padding: 5px;
 }
+
+/* submit button for advanced search & entry form */
 
 .advanced-button{
 	margin:auto;
@@ -217,4 +220,16 @@ select{
 	margin:auto;
 	margin-right:10px;
 	margin-left:10px;
+}
+
+/* Extra Add Entry Styling */
+
+.add-entry{
+	max-width:550px;
+	margin:auto;
+}
+
+.add-field{
+    width: 95%; 
+    margin-bottom: 5px;
 }
